@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { styles } from '../styles';
 import { ComputersCanvas } from './canvas';
 import { motion } from 'framer-motion';
 import { herobg } from '../assets';
 
 const Hero = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    setIsMobile(mediaQuery.matches);
+
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaQueryChange);
+    };
+  }, []);
+
   return (
     <section id="hero" className="relative w-full h-screen mx-auto">
       <img 
@@ -32,8 +49,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* ⚠ Temporarily comment out the 3D canvas for mobile testing */}
-      <ComputersCanvas />
+      {/* Render 3D canvas ONLY on desktop/laptop */}
+      {!isMobile && <ComputersCanvas />}
 
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">
