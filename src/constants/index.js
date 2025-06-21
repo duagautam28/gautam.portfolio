@@ -142,7 +142,7 @@ const experiences = [
  
 ];
 
-const achievments = [
+const achievements = [
   {
     title:
       "Successfully advanced to the SSB (Services Selection Board) conference round under the B.Tech Navy Entry Scheme.",
@@ -241,4 +241,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, achievments, projects };
+export { services, technologies, experiences, achievements, projects };

@@ -5,7 +5,7 @@ import About from './About';
 import Tech from './Tech';
 import Experience from './Experience';
 import Works from './Works';
-import Achievments from './Achievments';
+import Achievements from './Achievements';
 import Contact from './Contact';
 import Footer from './Footer';
 
@@ -15,7 +15,7 @@ export {
   Navbar,
   About,
   Tech,
-  Achievments,
+  Achievements,
   Works,
   Experience,
   Contact,
